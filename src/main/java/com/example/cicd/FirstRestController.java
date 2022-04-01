@@ -8,6 +8,6 @@ public class FirstRestController {
     @GetMapping("/first")
     public Message getFirst()
     {
-        return new Message("First page");
+        return new Message("First page1");
     }
 }
