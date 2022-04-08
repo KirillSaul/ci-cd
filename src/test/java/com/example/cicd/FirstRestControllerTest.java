@@ -19,6 +19,6 @@ class FirstRestControllerTest {
     @Test
     void getFirst() throws Exception {
         mockMvc.perform(get("/first"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.message", Matchers.is("First page")));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", Matchers.is("First page1")));
     }
 }
