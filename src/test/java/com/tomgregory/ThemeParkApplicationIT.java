@@ -22,36 +22,36 @@ public class ThemeParkApplicationIT {
 
     @Test
     public void getsAllRides() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/ride")
+        mockMvc.perform(MockMvcRequestBuilders.get("/ridel")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andReturn();
     }
 
-    @Test
-    public void getsSingleRide() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/ride/1")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andReturn();
-    }
-
-    @Test
-    public void returnsNotFoundForInvalidSingleRide() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/ride/4")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound())
-                .andReturn();
-    }
-
-    @Test
-    public void addsNewRide() throws Exception {
-        String newRide = "{\"name\":\"Monorail\",\"description\":\"Sedate travelling ride.\",\"thrillFactor\":2,\"vomitFactor\":1}";
-        mockMvc.perform(MockMvcRequestBuilders.post("/ride")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(newRide)
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andReturn();
-    }
+//    @Test
+//    public void getsSingleRide() throws Exception {
+//        mockMvc.perform(MockMvcRequestBuilders.get("/ride/1")
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andReturn();
+//    }
+//
+//    @Test
+//    public void returnsNotFoundForInvalidSingleRide() throws Exception {
+//        mockMvc.perform(MockMvcRequestBuilders.get("/ride/4")
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isNotFound())
+//                .andReturn();
+//    }
+//
+//    @Test
+//    public void addsNewRide() throws Exception {
+//        String newRide = "{\"name\":\"Monorail\",\"description\":\"Sedate travelling ride.\",\"thrillFactor\":2,\"vomitFactor\":1}";
+//        mockMvc.perform(MockMvcRequestBuilders.post("/ride")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(newRide)
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andReturn();
+//    }
 }
