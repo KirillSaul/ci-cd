@@ -22,4 +22,6 @@ jobs:
       - name: Codecov
         uses: codecov/codecov-action@v3.0.0
         with:
+          files: ./coverage/calculator/coverage-final.json,./coverage/coverage-test/coverage-final.json
+          file: ./coverage/coverage-final.json
           token: ${{ secrets.CODECOV_TOKEN }}
