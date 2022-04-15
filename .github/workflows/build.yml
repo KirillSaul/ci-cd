@@ -27,5 +27,5 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Deploy
-        run: curl -T /home/runner/work/ci-cd/ci-cd/target/cicd.war 'http://avada_kino:OUlIg40qOZ@kino.avada-media-dev1.od.ua//manager/text/deploy?path=/cicd&update=true'
+        run: curl -v -u  tomcat:OUlIg40qOZ -T /home/runner/work/ci-cd/ci-cd/target/cicd.war 'http://kino.avada-media-dev1.od.ua//manager/text/deploy?path=/cicd&update=true'
 
