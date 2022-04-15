@@ -18,10 +18,10 @@ jobs:
         with:
           java-version: 1.11
 
-      - name: Maven Package
+      - name: Maven Verify
         run: mvn -B clean verify
 
-      - name: Codecov
+      - name: Test Coverage
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
