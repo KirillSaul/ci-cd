@@ -17,11 +17,11 @@ class HelloControllerTest {
 	@Test
 	void hello() {
 		webTestClient.get()
-		             .uri("/test")
+		             .uri("/first")
 		             .exchange()
 		             .expectStatus()
 		             .isOk()
 		             .expectBody(String.class)
-		             .isEqualTo("Hello World!");
+		             .isEqualTo("First page.");
 	}
 }
