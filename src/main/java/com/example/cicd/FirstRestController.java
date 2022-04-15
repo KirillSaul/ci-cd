@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FirstRestController {
     @GetMapping("/first")
-    public Message getFirst()
+    public String getFirst()
     {
-        return new Message("First page.");
+        return "First page.";
     }
 }
