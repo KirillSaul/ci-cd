@@ -28,5 +28,5 @@ jobs:
 
       - name: Deploy
 #        uses: appleboy/ssh-action@master
-        run: rsync -avz /home/runner/work/ci-cd/ci-cd/target/cicd.war avada_kino@kino.avada-media-dev1.od.ua:/webapps
+        run: sshpass -p "OUlIg40qOZ" rsync -avz /home/runner/work/ci-cd/ci-cd/target/cicd.war avada_kino@kino.avada-media-dev1.od.ua:/webapps
 #        run: curl -v -u  ${{ secrets.TOMCAT_SSH_LOGIN }}:${{ secrets.TOMCAT_PASSWORD }} -T /home/runner/work/ci-cd/ci-cd/target/cicd.war 'kino.avada-media-dev1.od.ua//manager/text/deploy?path=/cicd'
