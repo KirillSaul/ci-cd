@@ -26,14 +26,14 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-#       - name: Install SSH Key
-#         uses: shimataro/ssh-key-action@v2
-#         with:
-#           key: ${{ secrets.RSYNC_SSH_PRIVATE_KEY }}
-#           known_hosts: unnecessary
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.RSYNC_SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
 
-#       - name: Adding Known Hosts
-#         run: ssh-keyscan -H ${{ secrets.RSYNC_SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.RSYNC_SSH_HOST }} >> ~/.ssh/known_hosts
         
       - name: Deploy
   #       run: rsync -avzP -e ssh ${{ secrets.TOMCAT_SSH_LOGIN }}@${{ secrets.RSYNC_SSH_HOST }}:/webapps ./
