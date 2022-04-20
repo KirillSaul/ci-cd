@@ -39,5 +39,5 @@ jobs:
   #       run: rsync -avzP -e ssh ${{ secrets.TOMCAT_SSH_LOGIN }}@${{ secrets.RSYNC_SSH_HOST }}:/webapps ./
 #        uses: appleboy/ssh-action@master
 #         run: rsync -avz ${{ github.workspace }}/target/cicd.war ${{ secrets.TOMCAT_SSH_LOGIN }}@${{ secrets.RSYNC_SSH_HOST }}:/home/avada/web/kino.avada-media-dev1.od.ua/webapps
-        run: scp -r ${{ github.workspace }}/target/cicd.war avada_kino@${{ secrets.RSYNC_SSH_HOST }}:/home/avada/web/kino.avada-media-dev1.od.ua/webapps
+        run: scp -r ${{ github.workspace }}/target/cicd.war avada_kino@${{ secrets.RSYNC_SSH_HOST }}:home/avada/web/kino.avada-media-dev1.od.ua/webapps
 #      run: curl -v -u  ${{ secrets.TOMCAT_SSH_LOGIN }}:${{ secrets.TOMCAT_PASSWORD }} -T /home/runner/work/ci-cd/ci-cd/target/cicd.war 'kino.avada-media-dev1.od.ua//manager/text/deploy?path=/cicd'
