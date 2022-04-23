@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FirstRestController {
-    @GetMapping("/first")
+    @GetMapping
     public String getFirst()
     {
         return "First page";
